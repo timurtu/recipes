@@ -3,12 +3,11 @@
 /**
  * Module dependencies.
  */
-
+import http from 'http'
 import log from 'gutil-color-log'
+const debug = require('debug')('super-dev-world:server')
 
 import app from '../app'
-var debug = require('debug')('super-dev-world:server');
-var http = require('http');
 
 /**
  * Get port from environment and store in Express.
@@ -28,7 +27,7 @@ var server = http.createServer(app);
  */
 
 server.listen(port, function () {
-  log('cyan', `Visit http://localhost:${port} in your web browser.`)
+  log('green', `Visit http://localhost:${port} in your web browser.`)
 })
 
 server.on('error', onError);

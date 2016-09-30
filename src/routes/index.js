@@ -27,17 +27,17 @@ router.get('/profile', (req, res) => {
     res.render('profile', {
       title: 'Profile',
       user: req.user
-    });
+    })
   } else {
-    res.redirect("/login");
+    res.redirect('/login')
   }
-});
+})
 
 router.get('/login', (req, res) => {
   res.render('login', {
     title: 'Log In',
     user: req.user
-  });
-});
+  })
+})
 
-module.exports = router;
+module.exports = router
