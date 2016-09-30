@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-8.col-md-offset-2
+        h1.display-4.m-b-2 Join Family
+        form
+          div.form-group
+            label(for='family-name') Access Token
+            input.form-control#family-name(placeholder="Given to you by a family member")
+          button.btn.btn-success-outline.pull-xs-right Join Family

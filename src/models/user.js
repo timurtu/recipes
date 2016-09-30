@@ -22,7 +22,7 @@ var UserSchema = new mongoose.Schema({
     required: true,
     trim: true
   }
-});
+})
 
 
 var User = mongoose.model('User', UserSchema);

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-8.col-md-offset-2
+        h1.display-4.m-b-2 Family
+        if(user)
+          a.btn.btn-success-outline.btn-lg.btn-block(href='/join-family') Join an existing family
+          a.btn.btn-info-outline.btn-lg.btn-block(href='/create-family') Create a new family
+        else
+          p Join an existing family or create your own.
+          a.btn.btn-info-outline.btn-lg.m-t-1(href='/login') Get Started for FREE

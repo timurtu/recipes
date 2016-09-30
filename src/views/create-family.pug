@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-8.col-md-offset-2
+        h1.display-4.m-b-2 Create Family
+        form
+          div.form-group
+            label(for='family-name') Family Name
+            input.form-control#family-name(placeholder="Name of your family")
+          button.btn.btn-info-outline.pull-xs-right Create Family

@@ -6,7 +6,7 @@ body {
 	/*background: #1d2a33 url('../images/people-eating.jpg') no-repeat;*/
 	background: #1d2a33 url('../images/coconut-thing.jpg') no-repeat;
 	background-size: cover;
-	@include animation(show-body, 1, ease-out, 1s)
+	@include animation(show-body, 1, ease-out, .6s)
 }
  @include keyframes (show-body){
 	0% {

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-8.col-md-offset-2
+        h1.display-4.m-b-2 Recipes
+        if(user)
+          h1 Wait
+          p You're not in a family!
+          a.btn.btn-info-outline.btn-lg.m-t-1(href='/family') Join or Create
+        else
+          p View and create recipes with your family.
+          a.btn.btn-info-outline.btn-lg.m-t-1(href='/login') Get Started for FREE

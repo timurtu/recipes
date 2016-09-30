@@ -6,11 +6,11 @@ nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
         i.icn-logo.material-icons collections_bookmark
         | Recipes
       .nav-items.clearfix
-        a.nav-item.nav-link(href='/about') My Family
-        a.nav-item.nav-link(href='/contact') Create New Recipe
-        a.nav-item.nav-link(href='/profile') My Recipes
+        a.nav-item.nav-link(href='/family') Family
+        a.nav-item.nav-link(href='/recipes') Recipes
+        a.nav-item.nav-link(href='/profile') Me
       if(user)
-        a.btn.btn-info.pull-md-right(href='/auth/logout') Log Out
+        a.btn.btn-info-outline.pull-md-right(href='/auth/logout') Log Out
       else
-        a(href='/auth/login/facebook' class='btn btn-primary')
+        a(href='/auth/login/facebook' class='btn btn-primary-outline')
           i(class='fa fa-2x fa-facebook')
