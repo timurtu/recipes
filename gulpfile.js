@@ -3,6 +3,7 @@ const gulp = require('gulp')
 const babel = require('gulp-babel')
 const Promise = require('bluebird')
 const rimrafAsync = Promise.promisify(require('rimraf'))
+const sass = require('gulp-sass')
 
 const paths = {
   src: path.resolve('src'),
@@ -25,6 +26,10 @@ gulp.task('transpile', ['clean'], () => gulp.src(path.join(paths.src, '**/*.js')
 gulp.task('tether', ['clean'], () => gulp.src(paths.tether)
   .pipe(gulp.dest(paths.public)))
 
-gulp.task('build', ['copy', 'transpile', 'tether'])
+  gulp.task('sass', ['clean'], () => gulp.src(path.join(paths.src, '**/*.scss'))
+  .pipe(sass().on('error', sass.logError))
+  .pipe(gulp.dest(paths.dist)))
+
+gulp.task('build', ['copy', 'transpile', 'tether', 'sass'])
 
 gulp.task('watch', () => gulp.watch(allSrc, ['build']))

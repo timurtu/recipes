@@ -1,0 +1,28 @@
+$prefixes: moz webkit o;
+@mixin prefix($property, $value) {
+   @each $prefix in $prefixes{
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+
+  #{$property}: $value;
+}
+@mixin animation($name, $iteration-count, $timing-function, $duration) {
+   @include prefix(animation-name, $name);
+  @include prefix(animation-iteration-count, $iteration-count);
+  @include prefix(animation-timing-function, $timing-function);
+  @include prefix(animation-duration, $duration);
+}
+@mixin keyframes($animationName) {
+   @-webkit-keyframes #{$animationName}{
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+     @content;
+  }
+  @-o-keyframes #{$animationName} {
+     @content;
+  }
+  @keyframes #{$animationName} {
+     @content;
+  }
+}

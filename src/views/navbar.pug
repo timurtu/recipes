@@ -3,13 +3,14 @@ nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
   #navbar.navbar-nav.collapse.navbar-toggleable-sm
     .container
       a.navbar-brand(href='/')
-        i.icn-logo.material-icons bookmark_border
-        | Bookworm
+        i.icn-logo.material-icons collections_bookmark
+        | Recipes
       .nav-items.clearfix
-        a.nav-item.nav-link(href='/about') About
-        a.nav-item.nav-link(href='/contact') Contact
-        a.nav-item.nav-link(href='/profile') My Profile
-      if(!user)
-        a.btn.btn-info.pull-md-right(href='/login') Log In
-      else
+        a.nav-item.nav-link(href='/about') My Family
+        a.nav-item.nav-link(href='/contact') Create New Recipe
+        a.nav-item.nav-link(href='/profile') My Recipes
+      if(user)
         a.btn.btn-info.pull-md-right(href='/auth/logout') Log Out
+      else
+        a(href='/auth/login/facebook' class='btn btn-primary')
+          i(class='fa fa-2x fa-facebook')

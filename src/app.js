@@ -7,7 +7,6 @@ import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
 import passport from 'passport'
-const GithubStrategy = require('passport-github').Strategy
 const FacebookStrategy = require('passport-facebook').Strategy
 import session from 'express-session'
 const MongoStore = require('connect-mongo')(session)
@@ -31,13 +30,6 @@ const generateOrFindUser = (accessToken, refreshToken, profile, done) => {
     done(new Error('Your email privacy settings are invalid.'), null)
   }
 }
-
-// Configure GitHub Strategy
-passport.use(new GithubStrategy({
-  clientID: process.env.GITHUB_CLIENT_ID,
-  clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: 'http://localhost:3000/auth/github/return'
-}, generateOrFindUser))
 
 // Configure FacebookStrategy
 passport.use(new FacebookStrategy({
