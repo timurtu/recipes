@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm-run-all build --parallel server watch",
+    "start": "npm-run-all build --parallel server watch debug",
     "build": "gulp build",
     "watch": "gulp watch",
-    "server": "FACEBOOK_CLIENT_ID=1798057613813215 FACEBOOK_CLIENT_SECRET=f833b0e92e0b343afc9568c4c6affc72 nodemon ./dist/bin/www.js"
+    "server": "FACEBOOK_CLIENT_ID=1798057613813215 FACEBOOK_CLIENT_SECRET=f833b0e92e0b343afc9568c4c6affc72 nodemon --debug ./dist/bin/www.js",
+    "debug": "node-inspector"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -34,6 +35,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-sass": "^2.3.2",
+    "node-inspector": "^0.12.8",
     "npm-run-all": "^3.1.0",
     "rimraf": "^2.5.4"
   }

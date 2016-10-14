@@ -26,7 +26,7 @@ gulp.task('transpile', ['clean'], () => gulp.src(path.join(paths.src, '**/*.js')
 gulp.task('tether', ['clean'], () => gulp.src(paths.tether)
   .pipe(gulp.dest(paths.public)))
 
-  gulp.task('sass', ['clean'], () => gulp.src(path.join(paths.src, '**/*.scss'))
+gulp.task('sass', ['clean'], () => gulp.src(path.join(paths.src, '**/*.scss'))
   .pipe(sass().on('error', sass.logError))
   .pipe(gulp.dest(paths.dist)))
 

@@ -38,6 +38,12 @@ router.get('/create-family', (req, res) => {
   }
 })
 
+router.post('/create-family', (req, res) => {
+  // console.log(req)
+  // console.log(res)
+  res.send('POST request to create family')
+})
+
 router.get('/join-family', (req, res) => {
   if(req.user) {
     res.render('join-family', {
